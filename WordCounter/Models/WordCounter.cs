@@ -1,6 +1,6 @@
 namespace WordCounter.Models
 {
-    public class WordCounter
+    public class Counter
     {
         
     }
