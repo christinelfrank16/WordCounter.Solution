@@ -10,6 +10,7 @@ class Program
         List<ConsoleColor> colors = new List<ConsoleColor>() { ConsoleColor.Blue, ConsoleColor.Green, ConsoleColor.Red, ConsoleColor.Cyan };
         
         bool retry = true;
+        
         while(retry)
         {
             Console.BackgroundColor = colors[GetRandomInt()];
