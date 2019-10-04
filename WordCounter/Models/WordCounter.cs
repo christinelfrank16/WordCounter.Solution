@@ -14,7 +14,12 @@ namespace WordCounter.Models
 
         public static bool IsOneWord(string word)
         {
-            return true;
+            bool isOneWord = true;
+            if(word.Contains(" "))
+            {
+                isOneWord = false;
+            }
+            return isOneWord;
         }
     }
 }
