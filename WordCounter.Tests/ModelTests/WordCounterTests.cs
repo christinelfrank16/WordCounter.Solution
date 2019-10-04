@@ -18,5 +18,17 @@ namespace WordCounter.Tests
             // Assert
             Assert.AreEqual(0,count);
         }
+
+        [TestMethod]
+        public void CheckWord_MatchExactWordInput_1()
+        {
+            // Arrange
+            string sentence = "place";
+            string search = "place";
+            // Act
+            int count = Counter.CheckWord(sentence, search);
+            // Assert
+            Assert.AreEqual(1, count);
+        }
     }
 }
