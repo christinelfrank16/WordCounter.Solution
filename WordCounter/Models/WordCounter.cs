@@ -102,5 +102,16 @@ namespace WordCounter.Models
             }
             return wordCount;
         }
+
+        public static int RunCounter(string sentence, string word)
+        {
+            Counter counter = new Counter(sentence, word);
+            List<string> sentenceList = counter.MakeSentenceList();
+            int wordCount = counter.CountWordsInSentence(sentenceList);
+            return wordCount;
+            
+        }
+
+
     }
 }
