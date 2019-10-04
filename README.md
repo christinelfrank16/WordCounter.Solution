@@ -35,7 +35,14 @@ LinkedIn: https://www.linkedin.com/in/christine-frank/
 
 | Behavior | Input | Output |
 |:-----|:-----:|:-----:|
-|  | | |
+| App accepts any character input for the user input (sentence and search word) <!-- Simplest: requires a direct return of user input --> | "I ate 2 2# pies!" | "I ate 2 2# pies!" |
+| App returns 1 when search term is an exact match to user input sentence (single word) <!-- Next Simplest: assumes 1 word value for sentence and word - performs 1 step (direct) check if input 'sentence' equals input word --> | Search term: place <br> Sentence: place | 1 |
+| App returns 0 when search term is present in user input sentence (single word) but is not exact match <!-- Next Simplest: assumes 1 word value for sentence and word - performs direct check if input 'sentence' equals input word (equal complexity to above spec) --> | Search term: book <br> Sentence: bookkeeper | 0 |
+| App returns 1 when search term is an exact match to user input sentence (single word) but has at least one character of a different case <!-- Next Simplest: assumes 1 word value for sentence and word - modifies above functionality to ignore letter case --> |Search term: place <br> Sentence: Place | 1 |
+| App ignores multiple word input for the word input <!-- Next Simplest: No longer assumes 1 word search term input by user -  2 step check: trims input and checks if a space is present --> | "2 pies" | "Please enter a single word to search for"|
+| App places sentence words into an array using spaces to identify word boundaries <!-- Next Simplest: No longer assumes 1 word sentence input by user - must iterate over sentence and find spaces, then put into array --> | A cat jumped | ["A","cat","jumped"]|
+| App iterates over sentence word array to count instances of exact word match <!-- Next Simplest: requires all above steps to function -->|Search term: cat <br> Sentence: A cat jumped near a cathedral |1|
+
 
 
 ## Technologies Used
