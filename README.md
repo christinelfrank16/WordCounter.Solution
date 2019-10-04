@@ -41,7 +41,9 @@ LinkedIn: https://www.linkedin.com/in/christine-frank/
 | App returns 1 when search term is an exact match to user input sentence (single word) but has at least one character of a different case <!-- Next Simplest: assumes 1 word value for sentence and word - modifies above functionality to ignore letter case --> |Search term: place <br> Sentence: Place | 1 |
 | App ignores multiple word input for the word input <!-- Next Simplest: No longer assumes 1 word search term input by user -  2 step check: trims input and checks if a space is present --> | "2 pies" | "Please enter a single word to search for"|
 | App places sentence words into an array using spaces to identify word boundaries <!-- Next Simplest: No longer assumes 1 word sentence input by user - must iterate over sentence and find spaces, then put into array --> | A cat jumped | ["A","cat","jumped"]|
-| App iterates over sentence word array to count instances of exact word match <!-- Next Simplest: requires all above steps to function -->|Search term: cat <br> Sentence: A cat jumped near a cathedral |1|
+| App iterates over sentence word array to count instances of exact word match <!-- Next Simplest: assumes no punctuation - requires all above steps to function -->|Search term: cat <br> Sentence: A cat jumped near a cathedral |1|
+| App removes end punctuation from around words in input sentence when placing into the word array <!-- Next Simplest: Assumes punctuation only at end - requires all above steps to function --> | Search term: cat <br> Sentence: A cat! |1|
+| App removes all front and end punctuation from around words in input sentence when placing into the word array <!-- Next Simplest: No longer assumes no punctuation - requires all above steps to function --> | Search term: cat <br> Sentence: A thing (cat)!? |1|
 
 
 
