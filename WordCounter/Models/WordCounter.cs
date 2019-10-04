@@ -45,7 +45,14 @@ namespace WordCounter.Models
         public List<string> MakeSentenceList()
         {
             List<string> sentenceList = new List<string>();
-            sentenceList.Add(Sentence);
+            string modifiedSentence = Sentence;
+            while(modifiedSentence.Contains(" "))
+            {
+                int indexOfFirstSpace = modifiedSentence.IndexOf(" ");
+                sentenceList.Add(modifiedSentence.Substring(0,indexOfFirstSpace));
+                modifiedSentence = modifiedSentence.Substring(indexOfFirstSpace+1);
+            }
+            sentenceList.Add(modifiedSentence);
             return sentenceList;
         }
     }
