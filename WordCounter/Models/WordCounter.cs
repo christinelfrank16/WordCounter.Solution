@@ -9,6 +9,12 @@ namespace WordCounter.Models
             Sentence = sentence.ToLower();
             Search = word.ToLower().Trim();
         }
+
+        public static bool CheckForContent(string input)
+        {
+            return true;
+        }
+        
         public int CheckWord()
         {
             int count = 0;
