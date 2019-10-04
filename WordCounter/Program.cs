@@ -1,14 +1,19 @@
 using System;
+using System.Collections.Generic;
 using WordCounter.Models;
 
 class Program
 {
     public static void Main()
     {
-
+        List<ConsoleColor> darkColors = new List<ConsoleColor>(){ConsoleColor.DarkBlue, ConsoleColor.DarkGreen, ConsoleColor.DarkRed, ConsoleColor.DarkCyan};
+        List<ConsoleColor> colors = new List<ConsoleColor>() { ConsoleColor.Blue, ConsoleColor.Green, ConsoleColor.Red, ConsoleColor.Cyan };
+        
         bool retry = true;
         while(retry)
         {
+            Console.BackgroundColor = colors[GetRandomInt()];
+            Console.ForegroundColor = darkColors[GetRandomInt()];
             string sentence = GetInput("Please enter a sentence.", "No value detected. Please retry.");
             string word = GetInput("Please enter a search word.", "No value detected. Please retry.");
             
@@ -46,5 +51,12 @@ class Program
             Console.WriteLine("Exiting the app. Thanks for playing!");
         }
         return retry;
+    }
+
+    public static int GetRandomInt()
+    {
+        Random rand = new Random();
+        int index = rand.Next(0,4);
+        return index;
     }
 }
