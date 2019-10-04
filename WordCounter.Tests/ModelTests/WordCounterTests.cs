@@ -180,6 +180,18 @@ namespace WordCounter.Tests
             Assert.AreEqual(1, wordCount);
         }
 
-
+        [TestMethod]
+        public void CountWordsInSentence_CountsExactWordsIgnoresEndPunctuation_Int()
+        {
+            // Arrange
+            string search = "cat";
+            string sentence = "a cat!";
+            Counter counter = new Counter(sentence, search);
+            List<string> sentenceList = counter.MakeSentenceList();
+            // Act
+            int wordCount = counter.CountWordsInSentence(sentenceList);
+            // Assert
+            Assert.AreEqual(1, wordCount);
+        }
     }
 }
