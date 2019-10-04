@@ -17,6 +17,22 @@ This is a console application which counts the number of instances a word is in 
 * Open a new Command Terminal and route to the root of the local repository
 * Enter command 'dotnet run' into the Terminal
 
+### Usage in Console
+```C#
+Please enter a sentence:
+>>> Hello world!
+
+Please enter a search word:
+>>> hello
+
+1 instance of hello was found!
+
+Would you like to play again? [Y/N]
+>> N
+
+Exiting the app. Thanks for playing!
+```
+
 
 ## Known Bugs
 
