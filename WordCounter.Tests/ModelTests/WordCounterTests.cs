@@ -16,7 +16,7 @@ namespace WordCounter.Tests
             string search = "cat";
             Counter counter = new Counter(sentence, search);
             // Act
-            int count = counter.CheckWord();
+            int count = counter.CheckWord(counter.Sentence);
             // Assert
             Assert.AreEqual(0,count);
         }
@@ -54,7 +54,7 @@ namespace WordCounter.Tests
             string search = "place";
             Counter counter = new Counter(sentence, search);
             // Act
-            int count = counter.CheckWord();
+            int count = counter.CheckWord(counter.Sentence);
             // Assert
             Assert.AreEqual(1, count);
         }
@@ -67,7 +67,7 @@ namespace WordCounter.Tests
             string search = "bookkeeper";
             Counter counter = new Counter(sentence, search);
             // Act
-            int count = counter.CheckWord();
+            int count = counter.CheckWord(counter.Sentence);
             // Assert
             Assert.AreEqual(0, count);
         }
@@ -80,7 +80,7 @@ namespace WordCounter.Tests
             string search = "place";
             Counter counter = new Counter(sentence, search);
             // Act
-            int count = counter.CheckWord();
+            int count = counter.CheckWord(counter.Sentence); 
             // Assert
             Assert.AreEqual(1, count);
         }

@@ -4,8 +4,8 @@ namespace WordCounter.Models
 {
     public class Counter
     {
-        string Sentence { get; }
-        string Search { get; }
+        public string Sentence { get; }
+        public string Search { get; }
         public Counter(string sentence, string word)
         {
             Sentence = sentence.ToLower();
@@ -22,10 +22,10 @@ namespace WordCounter.Models
             return hasContent;
         }
 
-        public int CheckWord()
+        public int CheckWord(string word)
         {
             int count = 0;
-            if(Sentence == Search)
+            if(word == Search)
             {
                 count++;
             }
@@ -61,7 +61,7 @@ namespace WordCounter.Models
             int wordCount = 0;
             foreach(string word in sentenceList)
             {
-                wordCount += CheckWord();
+                wordCount += CheckWord(word);
             }
             return wordCount;
         }
