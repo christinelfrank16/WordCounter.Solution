@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace WordCounter.Models
 {
     public class Counter
@@ -38,6 +40,13 @@ namespace WordCounter.Models
                 isOneWord = false;
             }
             return isOneWord;
+        }
+
+        public List<string> MakeSentenceList()
+        {
+            List<string> sentenceList = new List<string>();
+            sentenceList.Add(Sentence);
+            return sentenceList;
         }
     }
 }
