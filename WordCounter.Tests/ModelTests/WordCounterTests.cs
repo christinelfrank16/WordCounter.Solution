@@ -42,5 +42,17 @@ namespace WordCounter.Tests
             // Assert
             Assert.AreEqual(0, count);
         }
+
+        [TestMethod]
+        public void CheckWord_MatchExactWordInputAndAllowDifferentCase_1()
+        {
+            // Arrange
+            string sentence = "Place";
+            string search = "place";
+            // Act
+            int count = Counter.CheckWord(sentence, search);
+            // Assert
+            Assert.AreEqual(1, count);
+        }
     }
 }
