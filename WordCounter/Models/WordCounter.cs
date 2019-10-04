@@ -4,7 +4,12 @@ namespace WordCounter.Models
     {
         public static int CheckWord(string sentence, string word)
         {
-            return 0;
+            int count = 0;
+            if(sentence == word)
+            {
+                count++;
+            }
+            return count;
         }
     }
 }
