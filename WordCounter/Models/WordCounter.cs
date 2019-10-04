@@ -55,5 +55,15 @@ namespace WordCounter.Models
             sentenceList.Add(modifiedSentence);
             return sentenceList;
         }
+
+        public int CountWordsInSentence(List<string> sentenceList)
+        {
+            int wordCount = 0;
+            foreach(string word in sentenceList)
+            {
+                wordCount += CheckWord();
+            }
+            return wordCount;
+        }
     }
 }
