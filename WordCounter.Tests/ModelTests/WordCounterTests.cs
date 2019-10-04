@@ -166,6 +166,20 @@ namespace WordCounter.Tests
             Assert.AreEqual(1, wordCount);
         }
 
+        [TestMethod]
+        public void CountWordsInSentence_CountsExactWordMatchesInMultiWordSentence_Int()
+        {
+            // Arrange
+            string search = "cat";
+            string sentence = "a cat jumped";
+            Counter counter = new Counter(sentence, search);
+            List<string> sentenceList = counter.MakeSentenceList();
+            // Act
+            int wordCount = counter.CountWordsInSentence(sentenceList);
+            // Assert
+            Assert.AreEqual(1, wordCount);
+        }
+
 
     }
 }
