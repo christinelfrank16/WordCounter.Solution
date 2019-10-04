@@ -11,5 +11,10 @@ namespace WordCounter.Models
             }
             return count;
         }
+
+        public static bool IsOneWord(string word)
+        {
+            return true;
+        }
     }
 }
