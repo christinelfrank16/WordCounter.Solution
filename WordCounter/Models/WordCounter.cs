@@ -5,7 +5,7 @@ namespace WordCounter.Models
         public static int CheckWord(string sentence, string word)
         {
             int count = 0;
-            if(sentence == word)
+            if(sentence.ToLower() == word.ToLower())
             {
                 count++;
             }
