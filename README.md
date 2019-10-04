@@ -36,6 +36,7 @@ LinkedIn: https://www.linkedin.com/in/christine-frank/
 | Behavior | Input | Output |
 |:-----|:-----:|:-----:|
 | App accepts any character input for the user input (sentence and search word) <!-- Simplest: requires a direct return of user input --> | "I ate 2 2# pies!" | "I ate 2 2# pies!" |
+| App requires non-empty character input <!-- Next Simplest: checks if input is "" --> | "" | "Please enter a value" |
 | App returns 1 when search term is an exact match to user input sentence (single word) <!-- Next Simplest: assumes 1 word value for sentence and word - performs 1 step (direct) check if input 'sentence' equals input word --> | Search term: place <br> Sentence: place | 1 |
 | App returns 0 when search term is present in user input sentence (single word) but is not exact match <!-- Next Simplest: assumes 1 word value for sentence and word - performs direct check if input 'sentence' equals input word (equal complexity to above spec) --> | Search term: book <br> Sentence: bookkeeper | 0 |
 | App returns 1 when search term is an exact match to user input sentence (single word) but has at least one character of a different case <!-- Next Simplest: assumes 1 word value for sentence and word - modifies above functionality to ignore letter case --> |Search term: place <br> Sentence: Place | 1 |

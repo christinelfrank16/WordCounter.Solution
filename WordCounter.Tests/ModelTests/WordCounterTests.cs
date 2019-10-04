@@ -21,6 +21,20 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
+        public void CheckForContent_MustHaveStringContent_True()
+        {
+            // Arrange
+            string sentence = "I ate 2 2# pies!";
+            string search = "cat";
+            // Act
+            bool sentenceContent = Counter.CheckForContent(sentence);
+            bool searchContent = Counter.CheckForContent(search);
+            // Assert
+            Assert.AreEqual(true, sentenceContent);
+            Assert.AreEqual(true, searchContent);
+        }
+
+        [TestMethod]
         public void CheckWord_MatchExactWordInput_1()
         {
             // Arrange
