@@ -181,6 +181,17 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
+        public void RemovePunctuation_RemovesAllFoundPunctuationFromFrontAndEnd_String()
+        {
+            // Arrange
+            string wordWithPunctuation = "(cat)!";
+            // Act
+            string modifiedWord = Counter.RemovePunctuation(wordWithPunctuation);
+            // Assert
+            Assert.AreEqual("cat", modifiedWord);
+        }
+
+        [TestMethod]
         public void CountWordsInSentence_CountsExactWordsIgnoresEndPunctuation_Int()
         {
             // Arrange
