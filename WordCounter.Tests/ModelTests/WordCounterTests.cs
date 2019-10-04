@@ -122,5 +122,36 @@ namespace WordCounter.Tests
             // Assert
             Assert.AreEqual(true, isOneWord);
         }
+
+        [TestMethod]
+        public void MakeSentenceArray_MakeArrayWithSentenceWords_StringArrayOneWord()
+        {
+            // Arrange
+            string search = "place";
+            string sentence = "jumped";
+            Counter counter = new Counter(sentence, search);
+            string[] expected = new string[]{"jumped"};
+            // Act
+            string[] sentenceArray = counter.MakeSentenceArray();
+            // Assert
+            CollectionAssert.AreEqual(expected, sentenceArray);
+        }
+
+        [TestMethod]
+        public void MakeSentenceArray_MakeArrayWithSentenceWords_StringArrayMultipleWords()
+        {
+            // Arrange
+            string search = "place";
+            string sentence = "a cat jumped";
+            Counter counter = new Counter(sentence, search);
+            string[] expected = new string[]{"a", "cat", "jumped"};
+            // Act
+            string[] sentenceArray = counter.MakeSentenceArray();
+            // Assert
+            CollectionAssert.AreEqual(expected, sentenceArray);
+
+        }
+
+
     }
 }
