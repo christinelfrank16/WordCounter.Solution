@@ -97,7 +97,7 @@ namespace WordCounter.Models
             int wordCount = 0;
             foreach(string word in sentenceList)
             {
-                string modifiedWord = RemoveOneSidePunctuation(word);
+                string modifiedWord = RemoveAllPunctuation(word);
                 wordCount += CheckWord(modifiedWord);
             }
             return wordCount;
