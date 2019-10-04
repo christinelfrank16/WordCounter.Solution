@@ -12,9 +12,14 @@ namespace WordCounter.Models
 
         public static bool CheckForContent(string input)
         {
-            return true;
+            bool hasContent = true;
+            if(input == "")
+            {
+                hasContent = false;
+            }
+            return hasContent;
         }
-        
+
         public int CheckWord()
         {
             int count = 0;
