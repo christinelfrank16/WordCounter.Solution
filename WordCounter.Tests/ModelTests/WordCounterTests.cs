@@ -42,7 +42,7 @@ namespace WordCounter.Tests
             // Act
             bool sentenceContent = Counter.CheckForContent(value);
             // Assert
-            Assert.AreEqual(false, value);
+            Assert.AreEqual(false, sentenceContent);
         }
 
         [TestMethod]
