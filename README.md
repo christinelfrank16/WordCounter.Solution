@@ -1,4 +1,4 @@
-# Word Counter
+# Word Counter <br> ![Build Status](https://img.shields.io/badge/build-passing-success)
 
 #### A console application to count the number of times a word is present in a sentence, 04-Oct-2019
 
