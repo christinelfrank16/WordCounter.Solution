@@ -181,12 +181,27 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
-        public void RemovePunctuation_RemovesAllFoundPunctuationFromFrontAndEnd_String()
+        public void RemoveOneSidePunctuation_RemovesPunctuationFromFront_String()
         {
             // Arrange
+            string search = "cat";
             string wordWithPunctuation = "(cat)!";
+            Counter counter = new Counter(wordWithPunctuation, search);
             // Act
-            string modifiedWord = Counter.RemovePunctuation(wordWithPunctuation);
+            string modifiedWord = counter.RemoveOneSidePunctuation(wordWithPunctuation);
+            // Assert
+            Assert.AreEqual("cat)!", modifiedWord);
+        }
+
+        [TestMethod]
+        public void RemoveAllPunctuation_RemovesAllFoundPunctuationFromFrontAndEnd_String()
+        {
+            // Arrange
+            string search = "cat";
+            string wordWithPunctuation = "(cat)!";
+            Counter counter = new Counter(wordWithPunctuation, search);
+            // Act
+            string modifiedWord = counter.RemoveAllPunctuation(wordWithPunctuation);
             // Assert
             Assert.AreEqual("cat", modifiedWord);
         }
