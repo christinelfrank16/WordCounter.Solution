@@ -30,5 +30,17 @@ namespace WordCounter.Tests
             // Assert
             Assert.AreEqual(1, count);
         }
+
+        [TestMethod]
+        public void CheckWord_NotExactWordInput_0()
+        {
+            // Arrange
+            string sentence = "book";
+            string search = "bookkeeper";
+            // Act
+            int count = Counter.CheckWord(sentence, search);
+            // Assert
+            Assert.AreEqual(0, count);
+        }
     }
 }
