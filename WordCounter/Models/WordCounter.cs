@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace WordCounter.Models
 {
@@ -18,7 +19,7 @@ namespace WordCounter.Models
         public static bool CheckForContent(string input)
         {
             bool hasContent = true;
-            if(input == "")
+            if(string.IsNullOrWhiteSpace(input))
             {
                 hasContent = false;
             }
@@ -61,15 +62,18 @@ namespace WordCounter.Models
 
         public string RemoveOneSidePunctuation(string word)
         {
+            int charRemovedCount = 0;
             for(int i = 0; i<word.Length; i++)
             {
                 bool charRemoved = false;
                 foreach(char c in Punctuation)
                 {
-                    if(c == word[i])
+                    if(c == word[i-charRemovedCount])
                     {
                         word = word.Substring(word.IndexOf(c)+1);
                         charRemoved = true;
+                        charRemovedCount++;
+                        break;
                     }
                 }
                 if(!charRemoved){
@@ -109,7 +113,6 @@ namespace WordCounter.Models
             List<string> sentenceList = counter.MakeSentenceList();
             int wordCount = counter.CountWordsInSentence(sentenceList);
             return wordCount;
-            
         }
 
 

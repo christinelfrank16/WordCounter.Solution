@@ -14,7 +14,6 @@ class Program
             
             int wordCount = Counter.RunCounter(sentence, word);
             Console.WriteLine(wordCount.ToString() + (wordCount == 1 ? " instance " : " instances ") + "of " + word + (wordCount == 1 ? " was " : " were ")  +"found!");
-
             retry = PlayAgain(retry);
         }
     }
