@@ -153,14 +153,15 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
-        public void CountWordsInSentence_CountsExactMatchesInSentence_Int()
+        public void CountWordsInSentence_CountsExactWordMatchesInSentence_Int()
         {
             // Arrange
             string search = "cat";
-            string sentence = "a cat jumped";
+            string sentence = "cat";
             Counter counter = new Counter(sentence, search);
+            List<string> sentenceList = counter.MakeSentenceList();
             // Act
-            int wordCount = counter.CountWordsInSentence();
+            int wordCount = counter.CountWordsInSentence(sentenceList);
             // Assert
             Assert.AreEqual(1, wordCount);
         }
