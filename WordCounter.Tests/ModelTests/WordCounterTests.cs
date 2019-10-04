@@ -35,6 +35,17 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
+        public void CheckForContent_MustHaveStringContent_False()
+        {
+            // Arrange
+            string value = "";
+            // Act
+            bool sentenceContent = Counter.CheckForContent(value);
+            // Assert
+            Assert.AreEqual(false, value);
+        }
+
+        [TestMethod]
         public void CheckWord_MatchExactWordInput_1()
         {
             // Arrange
