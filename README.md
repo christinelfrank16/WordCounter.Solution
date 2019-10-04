@@ -25,7 +25,7 @@ None known at this time.
 ## Support and contact details
 
 Find a bug?! Add an issue to the GitHub Repo.
-Repo: https://github.com/christinelfrank16/the-flour-shop
+Repo: https://github.com/christinelfrank16/NumbersToWords.Solution
 
 Other Contact
 Email: christine.braun13@gmail.com
