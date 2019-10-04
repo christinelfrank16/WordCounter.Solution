@@ -2,20 +2,27 @@ namespace WordCounter.Models
 {
     public class Counter
     {
-        public static int CheckWord(string sentence, string word)
+        string Sentence { get; }
+        string Search { get; }
+        public Counter(string sentence, string word)
+        {
+            Sentence = sentence.ToLower();
+            Search = word.ToLower().Trim();
+        }
+        public int CheckWord()
         {
             int count = 0;
-            if(sentence.ToLower() == word.ToLower())
+            if(Sentence == Search)
             {
                 count++;
             }
             return count;
         }
 
-        public static bool IsOneWord(string word)
+        public bool IsOneWord()
         {
             bool isOneWord = true;
-            if(word.Trim().Contains(" "))
+            if(Search.Contains(" "))
             {
                 isOneWord = false;
             }

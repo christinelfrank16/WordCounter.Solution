@@ -13,8 +13,9 @@ namespace WordCounter.Tests
             // Arrange
             string sentence = "I ate 2 2# pies!";
             string search = "cat";
+            Counter counter = new Counter(sentence, search);
             // Act
-            int count = Counter.CheckWord(sentence, search);
+            int count = counter.CheckWord();
             // Assert
             Assert.AreEqual(0,count);
         }
@@ -25,8 +26,9 @@ namespace WordCounter.Tests
             // Arrange
             string sentence = "place";
             string search = "place";
+            Counter counter = new Counter(sentence, search);
             // Act
-            int count = Counter.CheckWord(sentence, search);
+            int count = counter.CheckWord();
             // Assert
             Assert.AreEqual(1, count);
         }
@@ -37,8 +39,9 @@ namespace WordCounter.Tests
             // Arrange
             string sentence = "book";
             string search = "bookkeeper";
+            Counter counter = new Counter(sentence, search);
             // Act
-            int count = Counter.CheckWord(sentence, search);
+            int count = counter.CheckWord();
             // Assert
             Assert.AreEqual(0, count);
         }
@@ -49,8 +52,9 @@ namespace WordCounter.Tests
             // Arrange
             string sentence = "Place";
             string search = "place";
+            Counter counter = new Counter(sentence, search);
             // Act
-            int count = Counter.CheckWord(sentence, search);
+            int count = counter.CheckWord();
             // Assert
             Assert.AreEqual(1, count);
         }
@@ -60,8 +64,10 @@ namespace WordCounter.Tests
         {
             // Arrange
             string search = "place";
+            string sentence = "no place like home";
+            Counter counter = new Counter(sentence, search);
             // Act
-            bool isOneWord = Counter.IsOneWord(search);
+            bool isOneWord = counter.IsOneWord();
             // Assert
             Assert.AreEqual(true, isOneWord);
         }
@@ -71,8 +77,10 @@ namespace WordCounter.Tests
         {
             // Arrange
             string search = "a place";
+            string sentence = "no place like home";
+            Counter counter = new Counter(sentence, search);
             // Act
-            bool isOneWord = Counter.IsOneWord(search);
+            bool isOneWord = counter.IsOneWord();
             // Assert
             Assert.AreEqual(false, isOneWord);
         }
@@ -82,8 +90,10 @@ namespace WordCounter.Tests
         {
             // Arrange
             string search = " place ";
+            string sentence = "no place like home";
+            Counter counter = new Counter(sentence, search);
             // Act
-            bool isOneWord = Counter.IsOneWord(search);
+            bool isOneWord = counter.IsOneWord();
             // Assert
             Assert.AreEqual(true, isOneWord);
         }
