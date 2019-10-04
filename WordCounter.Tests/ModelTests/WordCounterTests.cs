@@ -150,7 +150,19 @@ namespace WordCounter.Tests
             List<string> sentenceList = counter.MakeSentenceList();
             // Assert
             CollectionAssert.AreEqual(expected, sentenceList);
+        }
 
+        [TestMethod]
+        public void CountWordsInSentence_CountsExactMatchesInSentence_Int()
+        {
+            // Arrange
+            string search = "cat";
+            string sentence = "a cat jumped";
+            Counter counter = new Counter(sentence, search);
+            // Act
+            int wordCount = counter.CountWordsInSentence();
+            // Assert
+            Assert.AreEqual(1, wordCount);
         }
 
 
