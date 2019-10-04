@@ -76,5 +76,16 @@ namespace WordCounter.Tests
             // Assert
             Assert.AreEqual(false, isOneWord);
         }
+
+        [TestMethod]
+        public void IsOneWord_RestrictSearchTermToOneWordWithTrim_True()
+        {
+            // Arrange
+            string search = " place ";
+            // Act
+            bool isOneWord = Counter.IsOneWord(search);
+            // Assert
+            Assert.AreEqual(true, isOneWord);
+        }
     }
 }
