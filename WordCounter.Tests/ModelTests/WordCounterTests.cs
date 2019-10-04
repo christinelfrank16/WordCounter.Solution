@@ -124,31 +124,31 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
-        public void MakeSentenceArray_MakeArrayWithSentenceWords_StringArrayOneWord()
+        public void MakeSentenceList_MakeListWithSentenceWords_StringListOneWord()
         {
             // Arrange
             string search = "place";
             string sentence = "jumped";
             Counter counter = new Counter(sentence, search);
-            string[] expected = new string[]{"jumped"};
+            List<string> expected = new List<string> {"jumped"};
             // Act
-            string[] sentenceArray = counter.MakeSentenceArray();
+            List<string> sentenceList = counter.MakeSentenceList();
             // Assert
-            CollectionAssert.AreEqual(expected, sentenceArray);
+            CollectionAssert.AreEqual(expected, sentenceList);
         }
 
         [TestMethod]
-        public void MakeSentenceArray_MakeArrayWithSentenceWords_StringArrayMultipleWords()
+        public void MakeSentenceList_MakeListWithSentenceWords_StringListMultipleWords()
         {
             // Arrange
             string search = "place";
             string sentence = "a cat jumped";
             Counter counter = new Counter(sentence, search);
-            string[] expected = new string[]{"a", "cat", "jumped"};
+            List<string> expected = new List<string> {"a", "cat", "jumped"};
             // Act
-            string[] sentenceArray = counter.MakeSentenceArray();
+            List<string> sentenceList = counter.MakeSentenceList();
             // Assert
-            CollectionAssert.AreEqual(expected, sentenceArray);
+            CollectionAssert.AreEqual(expected, sentenceList);
 
         }
 
